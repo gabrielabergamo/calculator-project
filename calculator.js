@@ -35,6 +35,8 @@ $(document).ready(function()
 	{
   		return n == "/" || n == "x" || n == "-" || n == "+" || n == "^";
 	}
+	
+	
 
 	// Simple FSM
 	$('.calc-btn').click(function() 
@@ -119,7 +121,9 @@ $(document).ready(function()
 					answer = add(parseInt(first_operand), parseInt(second_operand));	
 				else if (operator == "^")
 					answer = power(parseInt(first_operand), parseInt(second_operand));	
-
+                
+				
+				
 				$('#question').append(" =");
 				$('#answer').append(answer).hide().fadeIn(1000);
 				state = 2;
@@ -133,4 +137,35 @@ function divide(x,y)
 {
   return x/y;
 }
-// You must implement the rest of the functions here.
+// You must implement the rest of the functions here. //
+
+function multiply(x,y) {
+	return x*y;
+}
+
+function subtract(x,y) {
+	return x-y;
+}  
+
+function add(x,y) {
+	return x+y;
+}
+
+function power(x,y) {
+    return Math.pow(x,y);
+}
+
+function square_root(x) {
+	return Math.sqrt(x);
+}
+
+function logBase10(x) {
+	return Math.log(x) / Math.log(10);
+}
+
+function generateRandomNumber(x) {
+	return Math.random(x) * (1000 - 1) + 1;
+}
+
+
+
